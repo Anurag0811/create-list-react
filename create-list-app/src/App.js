@@ -82,6 +82,7 @@ function App() {
 
   const handleCancelListView = () => {
     // Reset the state when canceling ListCreationView
+    
     setShouldShowListViewCreation(false);
     setSelectedListNumbers([]);
     setNewList([]);
@@ -89,6 +90,11 @@ function App() {
 
   return (
     <>
+    <h2 >List Creation</h2>
+      <button onClick={handleCreateList} disabled={shouldShowListViewCreation}>
+            Create New List
+      </button>
+      <p>{message}</p>
       {shouldShowListViewCreation ? (
         <ListCreationView
         selectedLists={selectedListNumbers}
@@ -99,16 +105,14 @@ function App() {
       />
       ) : (
         <div className="container">
-          <button onClick={handleCreateList} disabled={shouldShowListViewCreation}>
-            Create New List
-          </button>
+          
           {loading ? (
             <p>Loading...</p>
           ) : (
             <div className="container">
-              <p>{message}</p>
+  
               {Object.keys(lists).map((listNumber) => (
-                <div key={listNumber}>
+                <div key={listNumber} className="list-container">
                   <h2>
                     <input
                       type="checkbox"
@@ -119,10 +123,10 @@ function App() {
                   </h2>
                   <ul>
                     {lists[listNumber].map((item) => (
-                      <li key={item.id} className="item">
+                      <li key={item.id} className="card my-3 mx-0">
                         <div className="item-box">
                           <strong>{item.name}</strong>
-                          <p>{item.description}</p>
+                          <p className="desc">{item.description}</p>
                         </div>
                       </li>
                     ))}

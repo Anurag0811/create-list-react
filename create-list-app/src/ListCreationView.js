@@ -55,15 +55,17 @@ function ListCreationView({ selectedLists, newList, lists, onCancel, onUpdate })
           <h2>List {selectedLists[0]}</h2>
           <ul>
             {list1.map((item) => (
-              <li key={item.id} className="item">
+              <li key={item.id} className="card my-3 mx-2">
                 <div className="item-box">
                   <strong>{item.name}</strong>
-                  <p>{item.description}</p>
-                </div>
-                <spnan onClick={() => handleItemMove(item, 'list1')} className="right-arrow">
+                  <p className="desc">{item.description}</p>
+                  <span onClick={() => handleItemMove(item, 'list1')} className="right-arrow">
                   &rarr;
-                </spnan>
+                </span>
+                </div>
+                
               </li>
+              
             ))}
           </ul>
         </div>
@@ -72,17 +74,18 @@ function ListCreationView({ selectedLists, newList, lists, onCancel, onUpdate })
           <h2>List {selectedLists[2]}</h2>
           <ul>
             {list3.map((item) => (
-              <li key={item.id} className="item">
+              <li key={item.id} className="card my-3 mx-2">
                 <div className="item-box">
                   <strong>{item.name}</strong>
-                  <p>{item.description}</p>
-                </div>
-                <span onClick={() => handleItemMoveBack(item, 'list3', 'list1')} className="left-arrow">
+                  <p className="desc">{item.description}</p>
+                  <span onClick={() => handleItemMoveBack(item, 'list3', 'list1')} className="left-arrow">
                   &larr;
                 </span>
                 <span onClick={() => handleItemMoveBack(item, 'list3', 'list2')} className="right-arrow">
                   &rarr;
                 </span>
+                </div>
+                
               </li>
             ))}
           </ul>
@@ -92,23 +95,30 @@ function ListCreationView({ selectedLists, newList, lists, onCancel, onUpdate })
           <h2>List {selectedLists[1]}</h2>
           <ul>
             {list2.map((item) => (
-              <li key={item.id} className="item">
+              <li key={item.id} className="card my-3 mx-2">
                 <div className="item-box">
                   <strong>{item.name}</strong>
-                  <p>{item.description}</p>
-                </div>
-                <span onClick={() => handleItemMove(item, 'list2')} className="left-arrow">
+                  <p className="desc">{item.description}</p>
+                  <span onClick={() => handleItemMove(item, 'list2')} className="left-arrow">
                   &larr;
                 </span>
+                </div>
+                
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="update-button-container">
-        <button onClick={handleUpdate}>Update</button>
+      <div className="container">
+        <div className="row">
+            <div className="col">
+                <button onClick={handleUpdate}>Update</button>
+                <button onClick={handleCancel}>Cancel</button>
+            </div>
+        </div>
       </div>
-      <button onClick={handleCancel}>Cancel</button>
+      
+      
     </>
   );
 }

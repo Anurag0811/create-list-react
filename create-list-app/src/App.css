@@ -1,21 +1,20 @@
-/* Add this CSS in a file named YourStyles.css */
 
 .container {
   display: flex;
-  justify-content: space-around;
   align-items: flex-start; /* Align items at the top */
-  margin-top: 30px;
+  margin-top: 10px;
   flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
 .list-container {
-  width: 10%;
+  background-color: rgb(233, 249, 249);
+  width: 20%;
   border: 1px solid #ddd;
   padding: 10px;
   margin: 10px;
   max-height: 600px; /* Set a max height for the list container */
   overflow-y: auto; /* Enable vertical scroll if the content overflows */
-  position: relative; /* Add relative positioning */
+  position: relative; 
 }
 
 ul {
@@ -26,13 +25,13 @@ ul {
 
 .item {
   margin-bottom: 8px;
-  position: relative; /* Add relative positioning */
+  position: relative; 
 }
 
 .item-box {
   border: 1px solid #ddd;
   padding: 8px;
-  position: relative; /* Add relative positioning */
+  position: relative; 
 }
 
 strong {
@@ -41,28 +40,25 @@ strong {
 
 span {
   cursor: pointer;
-  position: absolute; /* Add absolute positioning */
-  bottom: 0; /* Position at the bottom */
+  position: absolute; 
+  bottom: 0; 
 }
 
-/* Move the right arrow to the right of the box */
 span.right-arrow {
   right: 0;
 }
 
-/* Move the left arrow to the left of the box */
 span.left-arrow {
   left: 0;
 }
 
-/* Additional styling for the checkbox label */
 input[type="checkbox"] {
   margin-right: 8px;
 }
 
-/* Additional styling for the Show List 3 button */
+
 button {
-  margin: 20px auto; /* Center the button */
+  margin: 20px auto; 
   margin-left: 650px;
   padding: 10px;
   cursor: pointer;
@@ -72,18 +68,27 @@ button {
   border-radius: 4px;
 }
 
-/* Style for list3 */
-.list-container.show-list3 {
-  flex: 1;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px;
-  max-height: 300px;
-  overflow-y: auto;
-}
+
+
 
 /* Additional styling for the message */
 p {
   color: red;
   margin-top: 10px;
+  text-align: center;
+}
+
+.desc{
+  color: black;
+  text-align: left;
+}
+
+h2{
+  text-align: center;
+}
+
+.container button {
+  display: inline-block;
+  margin: 10px;
+  
 }
