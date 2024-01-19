@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/create-list-react/static/css/main.985e49fa.css",
+    "main.js": "/create-list-react/static/js/main.82bea65c.js",
+    "static/js/787.e385d65f.chunk.js": "/create-list-react/static/js/787.e385d65f.chunk.js",
+    "index.html": "/create-list-react/index.html",
+    "main.985e49fa.css.map": "/create-list-react/static/css/main.985e49fa.css.map",
+    "main.82bea65c.js.map": "/create-list-react/static/js/main.82bea65c.js.map",
+    "787.e385d65f.chunk.js.map": "/create-list-react/static/js/787.e385d65f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.985e49fa.css",
+    "static/js/main.82bea65c.js"
+  ]
+}
