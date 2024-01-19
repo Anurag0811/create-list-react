@@ -11,7 +11,6 @@ function ListCreationView({ selectedLists, newList, lists, onCancel, onUpdate })
     const [list1Number, list2Number,newListNumber] = selectedLists;
     setList1(lists[list1Number]);
     setList2(lists[list2Number]);
-    // Assign newList to list3
     setList3(lists[newListNumber]);
   }, [selectedLists, lists, newList]);
 
@@ -34,12 +33,11 @@ function ListCreationView({ selectedLists, newList, lists, onCancel, onUpdate })
   };
 
   const handleCancel = () => {
-    onCancel(); // Call the onCancel callback passed as a prop
+    onCancel(); 
   };
 
   const handleUpdate = () => {
     const [list1Number, list2Number, newListNumber] = selectedLists;
-    // Call the callback function to update lists in ListApp
     onUpdate((prevLists) => ({
       ...prevLists,
       [list1Number]: list1,

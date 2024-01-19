@@ -1,9 +1,9 @@
 
 .container {
   display: flex;
-  align-items: flex-start; /* Align items at the top */
+  align-items: flex-start; 
   margin-top: 10px;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap; 
 }
 
 .list-container {
@@ -70,8 +70,6 @@ button {
 
 
 
-
-/* Additional styling for the message */
 p {
   color: red;
   margin-top: 10px;

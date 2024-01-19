@@ -50,7 +50,7 @@ function App() {
   const handleUpdateLists = (updatedLists) => {
     // Update the lists in ListApp component based on changes in ListCreationView
     setLists(updatedLists);
-    setShouldShowListViewCreation(false); // Close ListCreationView after updating
+    setShouldShowListViewCreation(false);
     setSelectedListNumbers([]);
     setNewList([]);
   };
@@ -82,7 +82,7 @@ function App() {
 
   const handleCancelListView = () => {
     // Reset the state when canceling ListCreationView
-    
+
     setShouldShowListViewCreation(false);
     setSelectedListNumbers([]);
     setNewList([]);
