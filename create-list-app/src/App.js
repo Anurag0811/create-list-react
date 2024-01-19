@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-
+import ListCreationView from './ListCreationView.js';
 function App() {
 
   const [lists, setLists] = useState([]);
@@ -40,7 +40,52 @@ function App() {
       });
   }, []);
 
+  const handleCheckBoxChange = (listNumber) => {
+    setCheckBoxMap((prevCheckBoxMap) => ({
+      ...prevCheckBoxMap,
+      [listNumber]: !prevCheckBoxMap[listNumber],
+    }));
+  };
 
+  const handleUpdateLists = (updatedLists) => {
+    // Update the lists in ListApp component based on changes in ListCreationView
+    setLists(updatedLists);
+    setShouldShowListViewCreation(false); // Close ListCreationView after updating
+    setSelectedListNumbers([]);
+    setNewList([]);
+  };
+
+  const handleCreateList = () => {
+    const checkedCount = Object.values(checkBoxMap).filter((checked) => checked).length;
+
+    if (checkedCount === 2) {
+      const selectedListNumbers = Object.keys(checkBoxMap).filter(
+        (listNumber) => checkBoxMap[listNumber]
+      );
+      setSelectedListNumbers(selectedListNumbers);
+
+      const newListNumber = Object.keys(lists).length + 1;
+      const newList = [];
+      setNewList(newList);
+      setSelectedListNumbers([...selectedListNumbers, newListNumber]);
+      setLists((prevLists) => ({
+        ...prevLists,
+        [newListNumber]: newList,
+      }));
+
+      setCheckBoxMap({});
+      setShouldShowListViewCreation(true);
+    } else {
+      setMessage('Please select exactly 2 checkboxes to create a new list.');
+    }
+  };
+
+  const handleCancelListView = () => {
+    // Reset the state when canceling ListCreationView
+    setShouldShowListViewCreation(false);
+    setSelectedListNumbers([]);
+    setNewList([]);
+  };
 
   return (
     <>
